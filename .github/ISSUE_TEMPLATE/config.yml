@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🔒 Report a security vulnerability
+    url: https://github.com/Im-Fran/flutter_proicons/security/advisories/new
+    about: Please report vulnerabilities privately, never as a public issue.
+  - name: 🎨 Request a new or different icon
+    url: https://github.com/ProCode-Software/proicons/issues
+    about: The icon artwork comes from ProIcons. Ask for new icons there.

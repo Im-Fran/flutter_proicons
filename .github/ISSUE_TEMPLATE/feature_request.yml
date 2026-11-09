@@ -1,0 +1,57 @@
+name: ✨ Feature request
+description: Suggest a new option, API or behaviour.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The icons themselves come from
+        [ProIcons](https://github.com/ProCode-Software/proicons) and are never
+        drawn or edited here, so requests for new or different icons belong
+        there. Requests about the widget, the categories, the generator or the
+        example are the easiest to land.
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Before requesting
+      options:
+        - label: I searched the existing issues and this is not a duplicate.
+          required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is missing
+      description: The problem you hit, not the solution you have in mind.
+      placeholder: |
+        I cannot tint an icon with a gradient without wrapping it in a
+        ShaderMask.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What you would like instead
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part of the package
+      options:
+        - ProIcon widget
+        - Icons and categories
+        - Generator (tool/generate.dart)
+        - Example app
+        - Documentation
+        - Somewhere else / not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives you considered

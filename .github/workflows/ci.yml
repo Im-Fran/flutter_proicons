@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [dev]
+  workflow_call: # reused by publish.yml so a release can't skip these checks
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Flutter ${{ matrix.name }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # Lowest Flutter declared in pubspec.yaml.
+          - name: minimum (3.35.0)
+            version: 3.35.0
+          - name: latest stable
+            version: latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: flutter-actions/setup-flutter@adb607ae976a9e00473569facfc69813c637a060 # v4.3
+        with:
+          version: ${{ matrix.version }}
+          cache: true
+          cache-sdk: true
+      - run: flutter pub get
+      # The example is analyzed together with the package, so it needs its own dependencies.
+      - run: flutter pub get
+        working-directory: example
+      # Formatting and publishing are checked once, with the newest toolchain:
+      # the formatter output may change between Dart versions.
+      - run: dart format --output=none --set-exit-if-changed .
+        if: matrix.version == 'latest'
+      - run: flutter analyze
+      - run: flutter test
+      - run: dart pub publish --dry-run
+        if: matrix.version == 'latest'
+      - run: flutter build web --release
+        working-directory: example

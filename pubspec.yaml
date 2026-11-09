@@ -1,0 +1,25 @@
+name: flutter_proicons
+description: >-
+  ProIcons for Flutter: 544 SVG icons in 29 categories, generated from the
+  official repository. Const, themable and tree-shakeable.
+version: 0.1.0
+repository: https://github.com/Im-Fran/flutter_proicons
+issue_tracker: https://github.com/Im-Fran/flutter_proicons/issues
+topics:
+  - icons
+  - svg
+  - proicons
+
+environment:
+  sdk: ^3.9.0
+  flutter: ">=3.35.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0

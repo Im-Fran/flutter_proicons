@@ -1,0 +1,102 @@
+name: 🐛 Bug report
+description: Something in flutter_proicons behaves differently than it should.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this. A small snippet that
+        reproduces the problem is the fastest way to get it fixed.
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Before reporting
+      options:
+        - label: I searched the existing issues and this is not a duplicate.
+          required: true
+        - label: I am using the latest published version of flutter_proicons.
+          required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you saw, and what you expected to see instead.
+      placeholder: |
+        ProIcons.airplane is drawn black in dark mode even though the
+        surrounding IconTheme is white.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: A minimal snippet is ideal.
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where does it happen
+      options:
+        - ProIcon widget (size, color, semantics)
+        - A specific icon (ProIcons)
+        - Categories or the proicons list
+        - Generator (tool/generate.dart)
+        - Example app
+        - Documentation
+        - Somewhere else / not sure
+    validations:
+      required: true
+
+  - type: input
+    id: icon
+    attributes:
+      label: Icon
+      description: If the problem is specific to an icon, which one.
+      placeholder: "ProIcons.airplane"
+
+  - type: input
+    id: package-version
+    attributes:
+      label: flutter_proicons version
+      description: From your pubspec.lock.
+      placeholder: "0.1.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: flutter-version
+    attributes:
+      label: Flutter version
+      description: The output of `flutter --version`.
+      render: shell
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Android
+        - iOS
+        - Web
+        - macOS
+        - Windows
+        - Linux
+        - Not platform-specific
+    validations:
+      required: true
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshots or anything else

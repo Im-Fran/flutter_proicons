@@ -1,0 +1,38 @@
+name: Publish to pub.dev
+
+# Releasing:
+#   1. Bump `version` in pubspec.yaml and add its entry to CHANGELOG.md (via PR).
+#   2. git tag 1.2.3 && git push origin 1.2.3   (no `v` prefix)
+#
+# One-time setup that is NOT inherited from any other repository:
+#   - The package must already exist on pub.dev: publish the first version
+#     manually with `dart pub publish`. Automated publishing can only be
+#     enabled on an existing package.
+#   - pub.dev > flutter_proicons > Admin > Automated publishing: enable
+#     "Publishing from GitHub Actions", repository `Im-Fran/flutter_proicons`,
+#     tag pattern `{{version}}`, and require the environment `pub.dev`.
+#   - GitHub > Settings > Environments: create `pub.dev` with a required reviewer
+#     (and, ideally, restrict it to tags).
+#   - Optionally protect the tag pattern `[0-9]*.[0-9]*.[0-9]*` with a ruleset so
+#     only maintainers can create release tags.
+on:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    uses: ./.github/workflows/ci.yml
+
+  publish:
+    needs: ci
+    # Waits for a manual approval: the `pub.dev` environment requires a reviewer.
+    # Approve it from the workflow run page (Review deployments).
+    permissions:
+      id-token: write # OIDC authentication with pub.dev
+    uses: dart-lang/setup-dart/.github/workflows/publish.yml@6afc89df92d6eb3834022f73cd65adc8cdfcb92d # v1.8.1
+    with:
+      environment: pub.dev

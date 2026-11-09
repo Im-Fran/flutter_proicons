@@ -1,0 +1,47 @@
+{
+  "Add": {
+    "description": "Plus, Create",
+    "category": "Actions",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" d=\"M4 12h16\"/></svg>"
+  },
+  "Class": {
+    "description": "Reserved word",
+    "category": "Text",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" d=\"M4 12h16\"/></svg>"
+  },
+  "3D Box": {
+    "description": "",
+    "category": "Logos & Brands",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" d=\"M4 12h16\"/></svg>"
+  },
+  "PDF 2": {
+    "description": "Has [brackets], <tags> and\nnewlines",
+    "category": "Actions",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" d=\"M4 12h16\"/></svg>"
+  },
+  "Wi-Fi": {
+    "description": "Internet",
+    "category": "Actions",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" d=\"M4 12h16\"/></svg>"
+  },
+  "X (Twitter)": {
+    "description": "Logo",
+    "category": "Logos & Brands",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" d=\"M4 12h16\"/></svg>"
+  },
+  "Tricky": {
+    "description": "Quote's \"here\" $x \\ end",
+    "category": "Text",
+    "icon": "<svg xmlns='http://www.w3.org/2000/svg' data-a=\"$a\\b\">\n\t<path d=\"M0 0\"/></svg>"
+  },
+  "Old": {
+    "description": "",
+    "category": "Actions",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" d=\"M4 12h16\"/></svg>"
+  },
+  "Gone": {
+    "description": "",
+    "category": "Actions",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path stroke=\"currentColor\" d=\"M4 12h16\"/></svg>"
+  }
+}

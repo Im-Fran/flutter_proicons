@@ -1,0 +1,23 @@
+{
+  "icons": {},
+  "deprecated": {
+    "Old": {
+      "version": "1.0.0",
+      "alternative": "Add"
+    },
+    "Gone": {
+      "version": "1.0.0",
+      "alternative": "Missing"
+    },
+    "Unlisted": {
+      "version": "1.0.0",
+      "alternative": "Add"
+    }
+  },
+  "aliases": {
+    "Plus": "Add",
+    "A": "B",
+    "B": "A",
+    "Dangling": "Missing"
+  }
+}

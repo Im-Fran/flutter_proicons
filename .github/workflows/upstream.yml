@@ -1,0 +1,26 @@
+name: Upstream catalog
+
+# Regenerates the icons from the pinned ProIcons tag and fails if the committed
+# lib/src/proicons.g.dart differs. Needs network, so it is not part of ci.yml.
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - tool/**
+      - lib/src/proicons.g.dart
+      - .github/workflows/upstream.yml
+
+permissions:
+  contents: read
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: flutter-actions/setup-flutter@adb607ae976a9e00473569facfc69813c637a060 # v4.3
+        with:
+          cache: true
+          cache-sdk: true
+      - run: flutter pub get
+      - run: flutter test test_upstream
