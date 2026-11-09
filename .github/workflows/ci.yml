@@ -43,8 +43,6 @@ jobs:
         if: matrix.version == 'latest'
       - run: flutter analyze
       - run: flutter test
-      - run: git status --short && git diff
-        if: matrix.version == 'latest'
       - run: dart pub publish --dry-run
         if: matrix.version == 'latest'
       - run: flutter build web --release
